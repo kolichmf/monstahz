@@ -1,24 +1,15 @@
-# README
+# Monsters
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get started, pull down the project and run:
 
-Things you may want to cover:
+`rake db:reset` from the command line.
 
-* Ruby version
+This should generate all Sprite Sheets, Tilesets, and Sprites so that they're in the database.
 
-* System dependencies
+This project has a dependency on redis, so you should make sure you install it.  You can do that on OSX by running:
 
-* Configuration
+`brew install redis`
 
-* Database creation
+If you don't have homebrew installed, install it, then run the command to install redis.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Before running `rails s` make sure you run `redis-server`.

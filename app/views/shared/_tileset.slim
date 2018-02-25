@@ -1,0 +1,4 @@
+- tileset.sprite_count_y.times do |y|
+  .tileset-row
+    - tileset.sprite_count_x.times do |x|
+      div class="#{tileset.sprites["#{x+1}"]["#{y+1}"]}"

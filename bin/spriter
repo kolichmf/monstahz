@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var parser = require('tileset-processor'),
+  sizeOf = require('image-size'),
+  outputDir = 'app/assets/stylesheets/tilesets',
+  tilesets = [
+    'lib/assets/sprite_sheets/cave/cave_A.png',
+    'lib/assets/sprite_sheets/cave/cave_B.png',
+    'lib/assets/sprite_sheets/desert/desert_A.png',
+    'lib/assets/sprite_sheets/desert/desert_B.png',
+    'lib/assets/sprite_sheets/dungeon/dungeon_A.png',
+    'lib/assets/sprite_sheets/dungeon/dungeon_B.png',
+    'lib/assets/sprite_sheets/grasslands/grasslands_A.png',
+    'lib/assets/sprite_sheets/grasslands/grasslands_B.png',
+    'lib/assets/sprite_sheets/town/town_A.png',
+    'lib/assets/sprite_sheets/town/town_B.png',
+    'lib/assets/sprite_sheets/town/town_C.png',
+    'lib/assets/sprite_sheets/town/town_D.png'
+  ];
+
+// Global config
+parser.set('tile-width', 16);          // Tile width (in pixels)
+parser.set('tile-height', 16);         // Tile height (in pixels)
+parser.set('output-mode', 'css-only'); // Output mode
+parser.set('output-dir', outputDir);   // Output directory
+
+// Generate stylesheets
+for(var i = 0; i < tilesets.length; i++) {
+  var tileset = tilesets[i],
+    fileSize = sizeOf(tileset);
+
+  parser.set('tileset', tileset);
+  parser.set('tiles-width', (fileSize.width / 16));   // Number of tiles horizontal in the tileset
+  parser.set('tiles-height', (fileSize.height / 16)); // Number of tiles vertically in the tileset
+  parser.generate();
+}

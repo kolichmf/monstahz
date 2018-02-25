@@ -1,0 +1,5 @@
+- JSON.parse($redis.get('sprite_sheets')).each do |sprite_sheet_name, sprite_sheet|
+  h2 = sprite_sheet_name
+  hr
+  - sprite_sheet['tilesets'].each do |tileset|
+    = render "shared/tileset", tileset: OpenStruct.new(tileset)

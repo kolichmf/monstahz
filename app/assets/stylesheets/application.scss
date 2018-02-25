@@ -1,0 +1,11 @@
+/*
+*= require_tree ./tilesets
+ */
+
+.tileset-row {
+  max-height: 16px;
+
+  > div {
+    display: inline-block;
+  }
+}
