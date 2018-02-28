@@ -13,3 +13,14 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+var mouseDown = 0;
+document.addEventListener("DOMContentLoaded", function() {
+  document.body.onmousedown = function() {
+    ++mouseDown;
+  };
+  document.body.onmouseup = function() {
+    --mouseDown;
+  };
+});
+

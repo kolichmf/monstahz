@@ -1,0 +1,9 @@
+button {
+  min-width: 32px;
+  padding: 6px;
+  border-radius: 3px;
+
+  &:focus {
+    outline:0;
+  }
+}

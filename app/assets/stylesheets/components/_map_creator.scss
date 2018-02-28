@@ -1,0 +1,49 @@
+[data-react-class='MapCreator'] {
+  height: 100%;
+
+  .sprite-picker {
+    position: fixed;
+    display: inline-block;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    width: 256px;
+    padding: 16px;
+    background: #fafafa;
+    overflow-y: scroll;
+
+    .sprite:hover {
+      outline-color: rgb(77, 144, 254); // #4D90FE
+      outline-offset: -2px;
+      outline-style: auto;
+      outline-width: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .map {
+    display: inline-block;
+    height: 100%;
+    width: calc(100% - (256px + 32px));
+    margin-left: calc( 256px + 32px );
+    position: relative;
+
+    .grid, .background {
+      height: ( (32 * 16px) + (33 * 1px) );
+      width: ( (50 * 16px) + (51 * 1px));
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translatey(-50%) translatex(-50%);
+    }
+
+    .background {
+      z-index: 0;
+    }
+
+    .grid {
+      z-index: 1;
+    }
+  }
+}
+

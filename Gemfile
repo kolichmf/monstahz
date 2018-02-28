@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip'
 gem 'slim-rails'
 gem 'redis'
+gem 'webpacker'
+gem 'react-rails'
 
 group :development, :test do
   gem 'pry-rails'

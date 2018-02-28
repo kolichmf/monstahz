@@ -21,3 +21,8 @@
 dump.rdb
 
 app/assets/stylesheets/tilesets # Ignore these files, they should be generated on each database seed.
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
