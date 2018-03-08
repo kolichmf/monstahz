@@ -14,7 +14,7 @@ function newMap(xDimensions, yDimensions){
       map[y] = {};
 
       [...Array(xDimensions)].map(
-        (_, x) => map[y][x] = {}
+        (_, x) => map[y][x] = {sprites:[]}
       );
     }
   );
@@ -38,7 +38,7 @@ export default function mapReducer(state = initialState, action){
       });
     case ADD_TO_MAP:
       let mapRow = JSON.parse(JSON.stringify(state[action.y]));
-      mapRow[action.x] = action.sprite;
+      mapRow[action.x].sprites.push(action.sprite);
 
       return Object.assign({}, state, {
         [action.y]: mapRow

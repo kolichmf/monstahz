@@ -1,14 +1,6 @@
 import React from "react"
-import PropTypes from "prop-types"
-import {connect} from 'react-redux'
-import Sprite from "./Sprite";
 import MapSprite from "./MapSprite";
-
-const mapState = (state) => {
-  return {
-    sprite: state.sprite
-  }
-};
+import MapToolbar from "./MapToolbar";
 
 class Map extends React.Component {
   render() {
@@ -18,15 +10,7 @@ class Map extends React.Component {
 
     return (
       <div className='map'>
-        <div>
-          Current Sprite:
-          {
-            this.props.sprite ?
-            <Sprite id={this.props.sprite.id} classNames={this.props.sprite.classNames}/>
-            :
-            null
-          }
-        </div>
+        <MapToolbar/>
         <div className='background'/>
         <div className='grid'>
           {grid}
@@ -49,7 +33,4 @@ class Map extends React.Component {
   };
 }
 
-Map.propTypes = {
-  sprite: PropTypes.object
-};
-export default connect(mapState)(Map)
+export default Map;

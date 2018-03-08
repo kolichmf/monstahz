@@ -7,6 +7,11 @@ $grid-color: #ccc;
     height: 16px;
     width: 16px;
     display: inline-block;
+    position: relative;
+
+    > div {
+      position: absolute;
+    }
   }
 
   &.grid-sprite-row {

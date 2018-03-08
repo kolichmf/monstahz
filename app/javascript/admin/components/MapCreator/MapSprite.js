@@ -13,10 +13,16 @@ const mapState = (state, props) => {
 
 class MapSprite extends React.Component {
   render () {
-    let sprite = this.props.sprite || {};
+    let sprite = this.props.sprite || {},
+        sprites = sprite.sprites.map(
+          (sprite, i) => <div className={sprite.classNames} style={{zIndex: i}}/>
+        );
+
     return (
       <React.Fragment>
-        <div onClick={this.paint} onMouseEnter={this.dragPaint} className={sprite.classNames + ' sprite-container'}/>
+        <div onClick={this.paint} onMouseEnter={this.dragPaint} className='sprite-container'>
+          {sprites}
+        </div>
       </React.Fragment>
     );
   }
